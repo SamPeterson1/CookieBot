@@ -1,7 +1,7 @@
 var AutoPlay = {};
  
 AutoPlay.run = function() {
-	Game.ObjectsById[0].buy();
+	Game.cookiesPs = 9999999999999999999999999999;
 }
 
 AutoPlay.autoPlayer = setInterval(AutoPlay.run, 300);
