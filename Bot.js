@@ -1,5 +1,5 @@
 var AutoPlay = {};
-
+ 
 Autoplay.run = function() {
 	Game.ObjectsById[0].buy();
 }
