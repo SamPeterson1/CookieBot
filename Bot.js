@@ -32,7 +32,7 @@ AutoPlay.calculatePP = function() {
 		if(i == "Octillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (5000000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
 		var ii;
 		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
-			if(Game.UpgradesInStore[ii].name == i) {
+			if(Game.UpgradesInStore[ii].name == i && Game.UpgradesInStore[ii]) {
 				upgradeNames[iters] = i;
 				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 				iters ++;
@@ -108,6 +108,12 @@ AutoPlay.updateCpC = function() {
 			
 	this.cookiesPC = CpC;
 }
+
+AutoPlay.goldenCookies() {
+	var sh = Game.shimmers;
+	
+	if(sh.length > 0) sh[0].pop();
+}
 			    
 AutoPlay.tryBestBuy = function() {
 	var minPP = buildingPP[0];
@@ -115,6 +121,10 @@ AutoPlay.tryBestBuy = function() {
 	var bestUpgradeIndex = 0;
 	var index = 0;
 	var i;
+	var second = Game.UpgradesInStore[1];
+	if((second.name = "Lucky day" | second.name = "Serendipity" | second.name = "Get lucky") && Game.UpgradesInStore[1].baseCost < Game.cookies) {
+		Game.UpgradesInStore[1].buy();
+	}
 	for(i = 0; i < buildingPP.length; i ++) {
 		if(buildingPP[i] < minPP) {
 			bestIndex = index;
