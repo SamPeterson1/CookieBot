@@ -5,7 +5,7 @@ var upgradeNames = [];
 var clickyUpgrades
 var nBuildingTypes = 3;
 var cookiesPC;
-var autoclickCPS = 50;
+var autoclickCPS = 12;
 
 AutoPlay.calculatePP = function() {
 	
@@ -151,5 +151,5 @@ AutoPlay.run = function() {
 	//Game.ClickCookie();
 }
 
-AutoPlay.autoClicker = setInterval(AutoPlay.click, 20);
+AutoPlay.autoClicker = setInterval(AutoPlay.click, (1000/autoclickCPS));
 AutoPlay.autoPlayer = setInterval(AutoPlay.run, 300);
