@@ -44,8 +44,7 @@ AutoPlay.tryBestBuy = function() {
 		index ++;
 	}
 	
-	console.log("WHST");
-	console.log(upgradePP.length);
+	Console.log(upgradePP.length);
 	
 	if(minPP < minUpgradePP) {
 		if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
@@ -61,7 +60,6 @@ AutoPlay.tryBestBuy = function() {
 AutoPlay.click = function() {Game.ClickCookie;}
 
 AutoPlay.run = function() {
-	console.log("HI");
 	AutoPlay.calculatePP();
 	AutoPlay.tryBestBuy();
 	Game.ClickCookie();
