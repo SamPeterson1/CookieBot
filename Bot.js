@@ -16,7 +16,7 @@ AutoPlay.tryBestBuy = function() {
 	var bestIndex = 0;
 	var index = 0;
 	var i;
-	for(i = 0; i < buildingPP.length; var ++) {
+	for(i = 0; i < buildingPP.length; i ++) {
 		if(buildingPP[i] < minPP) {
 			console.log("reee" + buildingPP[i]);
 			bestIndex = index;
