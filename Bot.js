@@ -44,6 +44,7 @@ AutoPlay.tryBestBuy = function() {
 		index ++;
 	}
 	
+	console.log("WHST");
 	console.log(upgradePP.length);
 	
 	if(minPP < minUpgradePP) {
