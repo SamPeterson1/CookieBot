@@ -129,11 +129,11 @@ AutoPlay.tryBestBuy = function() {
 		index ++;
 	}
 	var upgd = Game.UpgradesInStore[1];
-	if((upgd.name = "Lucky day" | upgd.name = "Serendipity" | upgd.name = "Get lucky") && Game.UpgradesInStore[1].baseCost < Game.cookies) {
+	if((upgd.name == "Lucky day" | upgd.name == "Serendipity" | upgd.name == "Get lucky") && Game.UpgradesInStore[1].baseCost < Game.cookies) {
 		Game.UpgradesInStore[1].buy();
 	}
 	upgd = Game.UpgradesInStore[0];
-	if((upgd.name = "Lucky day" | upgd.name = "Serendipity" | upgd.name = "Get lucky") && Game.UpgradesInStore[0].baseCost < Game.cookies) {
+	if((upgd.name == "Lucky day" | upgd.name == "Serendipity" | upgd.name == "Get lucky") && Game.UpgradesInStore[0].baseCost < Game.cookies) {
 		Game.UpgradesInStore[0].buy();
 	}
 	var minUpgradePP = upgradePP[0];
