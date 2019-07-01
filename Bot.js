@@ -1,5 +1,6 @@
 var AutoPlay = {};
-var buildingPP = [];		  
+var buildingPP = [];	
+var upgradePP = [];
 var nBuildingTypes = 3;
 
 AutoPlay.calculatePP = function() {
@@ -9,27 +10,48 @@ AutoPlay.calculatePP = function() {
 		buildingPP[iters] = CM.Cache.Objects[i].pp;
 		iters ++;
 	}
+	
+	iters = 0;
+	
+	for(var i in CM.Cache.Upgrades) { 
+		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
+		iters ++;
+	}
 }
 
 AutoPlay.tryBestBuy = function() {
 	var minPP = buildingPP[0];
 	var bestIndex = 0;
+	var bestUpgradeIndex = 0;
 	var index = 0;
 	var i;
 	for(i = 0; i < buildingPP.length; i ++) {
 		if(buildingPP[i] < minPP) {
-			console.log("reee" + buildingPP[i]);
 			bestIndex = index;
 			minPP = buildingPP[i];
-		} else {
-			console.log(buildingPP[i]);
 		}
 		index ++;
 	}
 	
-	console.log(bestIndex);
-	if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
-		Game.ObjectsById[bestIndex].buy();
+	var minUpgradePP = upgradePP[0];
+	index = 0;
+	
+	for(i = 0; i < upgradePP.length; i ++) {
+		if(upgradePP[i] < minUpgradePP) {
+			bestUpgradeIndex = index;
+			minUpgradePP = buildingPP[i];
+		}
+		index ++;
+	}
+	
+	if(minPP < minUpgradePp) {
+		if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
+			Game.ObjectsById[bestIndex].buy();
+		}
+	} else {
+		if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
+			Game.ObjectsById[bestIndex].buy();
+		}
 	}
 }
 
