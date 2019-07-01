@@ -35,10 +35,10 @@ AutoPlay.calculatePP = function() {
 			if(Game.UpgradesInStore[ii].name == i) {
 				upgradeNames[iters] = i;
 				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
-				
+				iters ++;
 			}
 		}
-		iters ++;
+		
 		if(i == "Plastic mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		if(i == "Iron mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		if(i == "Titanium mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
