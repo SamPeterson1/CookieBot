@@ -30,7 +30,14 @@ AutoPlay.calculatePP = function() {
 		if(i == "Sextillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (50000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
 		if(i == "Septillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (500000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
 		if(i == "Octillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (5000000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
-		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
+		var ii;
+		for(ii = 0; ii < Game.UpgradesInStore; ii ++) {
+			if(Game.UpgradesInStore[ii].name == i) {
+				upgradeNames[iters] = i;
+				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
+				iters ++;
+			}
+		}
 		if(i == "Plastic mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		if(i == "Iron mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		if(i == "Titanium mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
@@ -44,8 +51,6 @@ AutoPlay.calculatePP = function() {
 		if(i == "Technobsidian mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		if(i == "Plasmarble mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		
-		upgradeNames[iters] = i;
-		iters ++;
 	}
 }
 
