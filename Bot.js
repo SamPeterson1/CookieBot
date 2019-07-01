@@ -61,6 +61,7 @@ AutoPlay.tryBestBuy = function() {
 AutoPlay.click = function() {Game.ClickCookie;}
 
 AutoPlay.run = function() {
+	console.log("HI");
 	AutoPlay.calculatePP();
 	AutoPlay.tryBestBuy();
 	Game.ClickCookie();
