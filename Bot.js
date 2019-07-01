@@ -1,6 +1,7 @@
 var AutoPlay = {};
 var buildingPP = [];	
 var upgradePP = [];
+var upgradeNames = [];
 var clickyUpgrades
 var nBuildingTypes = 3;
 var cookiesPC;
@@ -43,6 +44,7 @@ AutoPlay.calculatePP = function() {
 		if(i == "Technobsidian mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		if(i == "Plasmarble mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		
+		upgradeNames[iters] = i;
 		iters ++;
 	}
 }
@@ -132,9 +134,11 @@ AutoPlay.tryBestBuy = function() {
 			Game.ObjectsById[bestIndex].buy();
 		}
 	} else {
-		console.log("Building " + minPP + " < Upgrade " + minUpgradePP + " " + bestUpgradeIndex);
-		if(Game.UpgradesInStore[bestUpgradeIndex].basePrice <= Game.cookies) {	
-			Game.UpgradesInStore[bestUpgradeIndex].buy();
+		var i;
+		for(i = 0; i < Game.UpgradesInStore.length; i ++) {
+			if(Game.UpgradesInStore[i].name == upgradeNames[bestUpgradeIndex]) {
+				Game.UpgradesInStore[i].buy();
+			}
 		}
 	}
 }
