@@ -18,10 +18,10 @@ AutoPlay.calculatePP = function() {
 		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
 			if(Game.UpgradesInStore[ii].index == CM.Cache.Upgrades[i].index) {
 				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
+				iters ++;
 				break;
 			}
-		}
-		iters ++;
+		}		
 	}
 }
 
@@ -57,8 +57,8 @@ AutoPlay.tryBestBuy = function() {
 			Game.ObjectsById[bestIndex].buy();
 		}
 	} else {
-		if(Game.UpgradesById[bestUpgradeIndex].price <= Game.cookies) {	
-			Game.UpgradesById[bestUpgradeIndex].buy();
+		if(Game.UpgradesInStore[bestUpgradeIndex].price <= Game.cookies) {	
+			Game.UpgradesInStore[bestUpgradeIndex].buy();
 		}
 	}
 }
