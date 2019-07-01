@@ -132,7 +132,7 @@ AutoPlay.tryBestBuy = function() {
 			Game.ObjectsById[bestIndex].buy();
 		}
 	} else {
-		console.log("Building " + minPP + " < Upgrade " + minUpgradePP);
+		console.log("Building " + minPP + " < Upgrade " + minUpgradePP + " " + bestUpgradeIndex);
 		if(Game.UpgradesInStore[bestUpgradeIndex].basePrice <= Game.cookies) {	
 			Game.UpgradesInStore[bestUpgradeIndex].buy();
 		}
