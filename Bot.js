@@ -17,6 +17,7 @@ AutoPlay.tryBestBuy = function() {
 	var index = 0;
 	for(var i in buildingPP) {
 		if(i < minPP) {
+			debug.log("ree");
 			bestIndex = index;
 			minPP = i;
 		}
@@ -35,4 +36,4 @@ AutoPlay.run = function() {
 }
 
 
-AutoPlay.autoPlayer = setInterval(AutoPlay.run, 300);
+AutoPlay.autoPlayer = setInterval(AutoPlay.run, 10000);
