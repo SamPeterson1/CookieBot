@@ -7,7 +7,6 @@ AutoPlay.calculatePP = function() {
 	var iters = 0;
 	for(var i in CM.Cache.Objects) { 
 		buildingPP[iters] = CM.Cache.Objects[i].pp;
-		console.log(buildingPP[iters]);
 		iters ++;
 	}
 }
@@ -24,6 +23,7 @@ AutoPlay.tryBestBuy = function() {
 		index ++;
 	}
 	
+	console.log(bestIndex);
 	if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
 		Game.ObjectsById[bestIndex].buy;
 	}
