@@ -138,6 +138,9 @@ AutoPlay.tryBestBuy = function() {
 		console.log("Building " + minPP + " < Upgrade " + minUpgradePP);
 		for(i = 0; i < Game.UpgradesInStore.length; i ++) {
 			if(Game.UpgradesInStore[i].name == upgradeNames[bestUpgradeIndex]) {
+				console.log(Game.UpgradesInStore[i].name);
+			}
+			if(Game.UpgradesInStore[i].name == upgradeNames[bestUpgradeIndex] && Game.UpgradesInStore[i].price <= Game.cookies) {
 				Game.UpgradesInStore[i].buy();
 			}
 		}
