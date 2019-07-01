@@ -17,8 +17,8 @@ AutoPlay.calculatePP = function() {
 	iters = 0;
 	
 	for(var i in CM.Cache.Upgrades) { 
-		if(i == "Reinforced index finger") CM.Cache.Upgrades[i].pp = AutoPlay.upgradePP(i, autoclickCPS + Game.ObjectsById[0].amount);
-		if(i == "Carpal tunnel prevention cream") CM.Cache.Upgrades[i].pp = AutoPlay.upgradePP(i, 2*(autoclickCPS + Game.ObjectsById[0].amount));
+		if(i == "Reinforced index finger") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, autoclickCPS + Game.ObjectsById[0].amount);
+		if(i == "Carpal tunnel prevention cream") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 2*(autoclickCPS + Game.ObjectsById[0].amount));
 		if(i == "Ambidextrous") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 4*(autoclickCPS + Game.ObjectsById[0].amount));
 		if(i == "Thousand fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (0.1*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
 		if(i == "Million fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (0.5*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
@@ -47,7 +47,7 @@ AutoPlay.calculatePP = function() {
 	}
 }
 
-AutoPlay.upgradePP = function(name, bonus) {
+AutoPlay.UpgradePP = function(name, bonus) {
 	var cost = 0;
 	var ii;
 	for(ii = 0; ii < Game.UpgradesById.length; ii ++) {
