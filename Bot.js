@@ -20,7 +20,7 @@ AutoPlay.calculatePP = function() {
 		if(i == "Ambidextrous") {
 			var bonus = 2*autoclickCPS;
 			CM.Cache.Upgrades[i].pp = (Math.max(CM.Cache.Upgrades[i].cost-Game.cookies, 0)/Game.cookiesPs) + CM.Cache.Upgrades[i].cost/bonus; 
-			console.log(CM.Cache.Upgrades[i].pp + " YA YEET");
+			console.log(CM.Cache.Upgrades[i].pp + " YA YEET " + bonus + " " + CM.Cache.Upgrades[i].cost);
 		}
 		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 		iters ++;
