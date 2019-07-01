@@ -117,5 +117,5 @@ AutoPlay.run = function() {
 	Game.ClickCookie();
 }
 
-AutoPlay.autoClicker = setInterval(AutoPlay.click, 50);
+//AutoPlay.autoClicker = setInterval(AutoPlay.click, 50);
 AutoPlay.autoPlayer = setInterval(AutoPlay.run, 300);
