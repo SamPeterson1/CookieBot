@@ -17,7 +17,6 @@ AutoPlay.calculatePP = function() {
 		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 		iters ++;	
 	}
-	console.log(" ");
 }
 
 AutoPlay.tryBestBuy = function() {
