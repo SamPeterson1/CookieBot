@@ -12,7 +12,7 @@ AutoPlay.calculatePP = function() {
 	}
 }
 
-AutoPlay.tryBestBuy() {
+AutoPlay.tryBestBuy = function() {
 	var minPP = buildingPP[0];
 	var bestIndex;
 	var index;
