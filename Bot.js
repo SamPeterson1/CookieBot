@@ -37,7 +37,7 @@ AutoPlay.tryBestBuy = function() {
 	index = 0;
 	
 	for(i = 0; i < upgradePP.length; i ++) {
-		if(upgradePP[i] < minUpgradePP) {
+		if(upgradePP[i] < minUpgradePP && Game.UpgradesById[i].unlocked) {
 			bestUpgradeIndex = index;
 			minUpgradePP = upgradePP[i];
 		}
