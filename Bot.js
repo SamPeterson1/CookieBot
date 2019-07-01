@@ -1,12 +1,12 @@
 var AutoPlay = {};
 var buildingPP = [];		  
 
-AutoPlay.calculatePP() = function() {
+AutoPlay.calculatePP = function() {
 	var building = Game.ObjectsById[AutoPlay.cursorCPS()-1];
 	building.buy();
 }
 
-AutoPlay.cursorCPS() = function() {
+AutoPlay.cursorCPS = function() {
 	return 1;
 }
 
