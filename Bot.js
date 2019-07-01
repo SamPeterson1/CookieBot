@@ -55,7 +55,7 @@ AutoPlay.getCursorCps = function() {
 	if(Game.Has("Septillion fingers")) cps += 500000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
 	if(Game.Has("Octillion fingers")) cps += 5000000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
 	
-	return cps
+	return cps;
 }
 			
 AutoPlay.updateCpC = function() {
