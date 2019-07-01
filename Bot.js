@@ -146,7 +146,7 @@ AutoPlay.tryBestBuy = function() {
 			if(Game.UpgradesInStore[i].name == upgradeNames[bestUpgradeIndex]) {
 				console.log(Game.UpgradesInStore[i].name);
 			}
-			if(Game.UpgradesInStore[i].name == upgradeNames[bestUpgradeIndex] && Game.UpgradesInStore[i].price <= Game.cookies) {
+			if(Game.UpgradesInStore[i].name == upgradeNames[bestUpgradeIndex] && Game.UpgradesInStore[i].basePrice <= Game.cookies) {
 				Game.UpgradesInStore[i].buy();
 			}
 		}
