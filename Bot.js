@@ -114,8 +114,8 @@ AutoPlay.click = function() {Game.ClickCookie;}
 AutoPlay.run = function() {
 	AutoPlay.calculatePP();
 	AutoPlay.tryBestBuy();
-	Game.ClickCookie();
+	//Game.ClickCookie();
 }
 
-//AutoPlay.autoClicker = setInterval(AutoPlay.click, 50);
+AutoPlay.autoClicker = setInterval(AutoPlay.click, 20);
 AutoPlay.autoPlayer = setInterval(AutoPlay.run, 300);
