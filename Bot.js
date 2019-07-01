@@ -18,6 +18,13 @@ AutoPlay.calculatePP = function() {
 	
 	for(var i in CM.Cache.Upgrades) { 
 		if(i == "Ambidextrous") {
+			var cost = 0;
+			var ii;
+			for(ii = 0; ii < Game.UpgradesById.length; ii ++) {
+				if(Game.UpgradesById[ii].name == "Ambidextrous") {
+					cost = Game.UpgradesById[ii].cost;
+				}
+			}
 			var bonus = 2*autoclickCPS;
 			CM.Cache.Upgrades[i].pp = (Math.max(CM.Cache.Upgrades[i].cost-Game.cookies, 0)/Game.cookiesPs) + CM.Cache.Upgrades[i].cost/bonus; 
 			console.log(CM.Cache.Upgrades[i].pp + " YA YEET " + bonus + " " + CM.Cache.Upgrades[i].cost);
