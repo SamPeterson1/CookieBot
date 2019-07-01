@@ -13,7 +13,7 @@ AutoPlay.calculatePP = function() {
 	
 	iters = 0;
 	
-	for(var i in Game.UpgradesInStore) { 
+	for(var i in CM.Cache.Upgrades) { 
 		var ii;
 		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
 			if(Game.UpgradesInStore[ii].index == i) {
