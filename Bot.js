@@ -121,10 +121,6 @@ AutoPlay.tryBestBuy = function() {
 	var bestUpgradeIndex = 0;
 	var index = 0;
 	var i;
-	var second = Game.UpgradesInStore[1];
-	if((second.name = "Lucky day" | second.name = "Serendipity" | second.name = "Get lucky") && Game.UpgradesInStore[1].baseCost < Game.cookies) {
-		Game.UpgradesInStore[1].buy();
-	}
 	for(i = 0; i < buildingPP.length; i ++) {
 		if(buildingPP[i] < minPP) {
 			bestIndex = index;
@@ -135,7 +131,14 @@ AutoPlay.tryBestBuy = function() {
 	
 	var minUpgradePP = upgradePP[0];
 	index = 0;
-	
+	var upgd = Game.UpgradesInStore[1];
+	if((upgd.name = "Lucky day" | upgd.name = "Serendipity" | upgd.name = "Get lucky") && Game.UpgradesInStore[1].baseCost < Game.cookies) {
+		Game.UpgradesInStore[1].buy();
+	}
+	upgd = Game.UpgradesInStore[0];
+	if((upgd.name = "Lucky day" | upgd.name = "Serendipity" | upgd.name = "Get lucky") && Game.UpgradesInStore[1].baseCost < Game.cookies) {
+		Game.UpgradesInStore[1].buy();
+	}
 	for(i = 0; i < upgradePP.length; i ++) {
 		if(upgradePP[i] < minUpgradePP && upgradePP[i] > 0) {
 			bestUpgradeIndex = index;
