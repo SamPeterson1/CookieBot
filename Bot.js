@@ -5,12 +5,12 @@ AutoPlay.run = function() {
 	AutoPlay.calculatePP();
 }
 
-void AutoPlay.calculatePP() {
+AutoPlay.calculatePP() = function() {
 	var building = Game.ObjectsById[AutoPlay.cursorCPS()-1];
 	building.buy();
 }
 
-int AutoPlay.cursorCPS() {
+AutoPlay.cursorCPS() = function() {
 	return 1;
 }
 
