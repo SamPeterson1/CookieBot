@@ -44,7 +44,7 @@ AutoPlay.tryBestBuy = function() {
 		index ++;
 	}
 	
-	Console.log(upgradePP.length);
+	console.log(upgradePP.length);
 	
 	if(minPP < minUpgradePP) {
 		if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
