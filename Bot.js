@@ -12,9 +12,27 @@ AutoPlay.calculatePP = function() {
 	}
 }
 
+AutoPlay.tryBestBuy() {
+	var minPP = buildingPP[0];
+	var bestIndex;
+	var index;
+	for(var i in buildingPP) {
+		if(i < minPP) {
+			bestIndex = index;
+			minPP = i;
+		}
+		index ++;
+	}
+	
+	if(Game.ObjectsById[bestIndex].price < Game.cookies) {	
+		Game.ObjectsById[bestIndex].buy;
+	}
+}
+
 AutoPlay.run = function() {
 	AutoPlay.calculatePP();
+	AutoPlay.tryBestBuy();
 }
 
 
-AutoPlay.autoPlayer = setInterval(AutoPlay.run, 10000);
+AutoPlay.autoPlayer = setInterval(AutoPlay.run, 300);
