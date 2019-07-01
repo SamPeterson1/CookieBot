@@ -39,7 +39,7 @@ AutoPlay.tryBestBuy = function() {
 	for(i = 0; i < upgradePP.length; i ++) {
 		if(upgradePP[i] < minUpgradePP) {
 			bestUpgradeIndex = index;
-			minUpgradePP = buildingPP[i];
+			minUpgradePP = upgradePP[i];
 		}
 		index ++;
 	}
