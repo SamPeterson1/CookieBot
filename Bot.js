@@ -2,7 +2,7 @@ var AutoPlay = {};
 int[] buildingPP = new int[2];
  
 AutoPlay.run = function() {
-	AutoPlat.calculatePP();
+	AutoPlay.calculatePP();
 }
 
 void AutoPlay.calculatePP() {
