@@ -29,6 +29,19 @@ AutoPlay.calculatePP = function() {
 		if(i == "Sextillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (50000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
 		if(i == "Septillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (500000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
 		if(i == "Octillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (5000000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
+		
+		if(i == "Plastic mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Iron mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Titanium mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Adamantium mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Unobtainium mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Eludium mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Wishalloy mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Fantasteel mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Nevercrack mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Armythril mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Technobsidian mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
+		if(i == "Plasmarble mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs);
 		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 		iters ++;
 	}
