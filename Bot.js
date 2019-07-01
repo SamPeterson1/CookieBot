@@ -22,7 +22,7 @@ AutoPlay.calculatePP = function() {
 			var ii;
 			for(ii = 0; ii < Game.UpgradesById.length; ii ++) {
 				if(Game.UpgradesById[ii].name == "Ambidextrous") {
-					cost = Game.UpgradesById[ii].cost;
+					cost = Game.UpgradesById[ii].basePrice;
 				}
 			}
 			var bonus = 2*autoclickCPS;
