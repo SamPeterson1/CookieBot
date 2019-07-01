@@ -135,7 +135,7 @@ AutoPlay.tryBestBuy = function() {
 		}
 	} else {
 		var i;
-		console.log("Building " + minPP + " < Upgrade " + minUpgradePP);
+		console.log("Building " + minPP + " < Upgrade " + minUpgradePP + " " + upgradeNames[bestUpgradeIndex]);
 		for(i = 0; i < Game.UpgradesInStore.length; i ++) {
 			if(Game.UpgradesInStore[i].name == upgradeNames[bestUpgradeIndex]) {
 				console.log(Game.UpgradesInStore[i].name);
