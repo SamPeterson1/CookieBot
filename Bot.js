@@ -24,7 +24,7 @@ AutoPlay.tryBestBuy() {
 		index ++;
 	}
 	
-	if(Game.ObjectsById[bestIndex].price < Game.cookies) {	
+	if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
 		Game.ObjectsById[bestIndex].buy;
 	}
 }
