@@ -36,7 +36,8 @@ AutoPlay.tryBestBuy = function() {
 AutoPlay.run = function() {
 	AutoPlay.calculatePP();
 	AutoPlay.tryBestBuy();
+	Game.ClickCookie();
 }
 
 
-AutoPlay.autoPlayer = setInterval(AutoPlay.run, 10000);
+AutoPlay.autoPlayer = setInterval(AutoPlay.run, 300);
