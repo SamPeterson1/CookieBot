@@ -109,7 +109,7 @@ AutoPlay.tryBestBuy = function() {
 	}
 }
 
-AutoPlay.click = function() {Game.ClickCookie;}
+AutoPlay.click = function() {Game.ClickCookie();}
 
 AutoPlay.run = function() {
 	AutoPlay.calculatePP();
