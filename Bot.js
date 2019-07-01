@@ -17,11 +17,18 @@ AutoPlay.calculatePP = function() {
 	iters = 0;
 	
 	for(var i in CM.Cache.Upgrades) { 
-		if(i == "Reinforced index finger") {
-			CM.Cache.Upgrades[i].pp = AutoPlay.upgradePP(i, 2*autoclickCPS + Game.ObjectsById[0].amount * AutoPlay.getCursorCps());
-			console.log(CM.Cache.Upgrades[i].pp + " Index finger PP");
-		}
-		
+		if(i == "Reinforced index finger") CM.Cache.Upgrades[i].pp = AutoPlay.upgradePP(i, autoclickCPS + Game.ObjectsById[0].amount);
+		if(i == "Carpal tunnel prevention cream") CM.Cache.Upgrades[i].pp = AutoPlay.upgradePP(i, 2*(autoclickCPS + Game.ObjectsById[0].amount));
+		if(i == "Ambidextrous") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 4*(autoclickCPS + Game.ObjectsById[0].amount));
+		if(i == "Thousand fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (0.1*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
+		if(i == "Million fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (0.5*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
+		if(i == "Billion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (5*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
+		if(i == "Trillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (50*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
+		if(i == "Quadrillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (500*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));	
+		if(i == "Quintillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (5000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
+		if(i == "Sextillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (50000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
+		if(i == "Septillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (500000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
+		if(i == "Octillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (5000000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
 		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 		iters ++;
 	}
