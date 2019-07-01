@@ -26,7 +26,7 @@ AutoPlay.calculatePP = function() {
 				}
 			}
 			var bonus = 2*autoclickCPS;
-			CM.Cache.Upgrades[i].pp = (cost-Game.cookies, 0)/Game.cookiesPs) + cost/bonus; 
+			CM.Cache.Upgrades[i].pp = ((cost-Game.cookies, 0)/Game.cookiesPs) + cost/bonus; 
 			console.log(CM.Cache.Upgrades[i].pp + " YA EET " + bonus + " " + cost);
 		}
 		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
