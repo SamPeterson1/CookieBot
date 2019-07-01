@@ -14,15 +14,8 @@ AutoPlay.calculatePP = function() {
 	iters = 0;
 	
 	for(var i in CM.Cache.Upgrades) { 
-		var ii;
-		console.log(CM.Cache.Upgrades[i].index + " Index");
-		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
-			if(Game.UpgradesInStore[ii].index == CM.Cache.Upgrades[i].index) {
-				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
-				iters ++;
-				break;
-			}
-		}		
+		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
+		iters ++;	
 	}
 	console.log(" ");
 }
@@ -53,10 +46,12 @@ AutoPlay.tryBestBuy = function() {
 	}
 	
 	if(minPP < minUpgradePP) {
+		console.log("Building " + minPP + " > Upgrade " + minUpgradePP);
 		if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
 			Game.ObjectsById[bestIndex].buy();
 		}
 	} else {
+		console.log("Building " + minPP + " < Upgrade " + minUpgradePP);
 		if(Game.UpgradesInStore[bestUpgradeIndex].price <= Game.cookies) {	
 			Game.UpgradesInStore[bestUpgradeIndex].buy();
 		}
