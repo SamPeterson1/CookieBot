@@ -18,8 +18,8 @@ AutoPlay.calculatePP = function() {
 	
 	for(var i in CM.Cache.Upgrades) { 
 		if(i == "Reinforced index finger") {
-			CM.Cache.upgrades[i].pp = AutoPlay.upgradePP(i, 2*autoclickCPS + Game.ObjectsById[0].amount * AutoPlay.getCursorCps());
-			console.log(CM.Cache.upgrades[i].pp + " Index finger PP");
+			CM.Cache.Upgrades[i].pp = AutoPlay.upgradePP(i, 2*autoclickCPS + Game.ObjectsById[0].amount * AutoPlay.getCursorCps());
+			console.log(CM.Cache.Upgrades[i].pp + " Index finger PP");
 		}
 		
 		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
