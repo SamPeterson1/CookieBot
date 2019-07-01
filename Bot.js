@@ -109,7 +109,7 @@ AutoPlay.updateCpC = function() {
 	this.cookiesPC = CpC;
 }
 
-AutoPlay.goldenCookies = function() {
+AutoPlay.goldenCookies2 = function() {
 	var sh = Game.shimmers;
 	
 	if(sh.length > 0) sh[0].pop();
@@ -171,6 +171,7 @@ AutoPlay.click = function() {Game.ClickCookie();}
 AutoPlay.run = function() {
 	AutoPlay.calculatePP();
 	AutoPlay.tryBestBuy();
+	AutoPlay.goldenCookies2();
 	//Game.ClickCookie();
 }
 
