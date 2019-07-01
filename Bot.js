@@ -14,8 +14,8 @@ AutoPlay.calculatePP = function() {
 
 AutoPlay.tryBestBuy = function() {
 	var minPP = buildingPP[0];
-	var bestIndex;
-	var index;
+	var bestIndex = 0;
+	var index = 0;
 	for(var i in buildingPP) {
 		if(i < minPP) {
 			bestIndex = index;
