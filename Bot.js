@@ -44,9 +44,9 @@ AutoPlay.tryBestBuy = function() {
 		index ++;
 	}
 	
-	if(minPP < minUpgradePp) {
-		if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
-			Game.ObjectsById[bestIndex].buy();
+	if(minPP < minUpgradePP) {
+		if(Game.UpgradesById[bestUpgradeIndex].price <= Game.cookies) {	
+			Game.ObjectsById[bestUpgradeIndex].buy();
 		}
 	} else {
 		if(Game.ObjectsById[bestIndex].price <= Game.cookies) {	
