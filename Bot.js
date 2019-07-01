@@ -13,7 +13,7 @@ AutoPlay.calculatePP = function() {
 	
 	iters = 0;
 	
-	for(var i in CM.Cache.Upgrades) { 
+	for(var i in Game.UpgradesInStore) { 
 		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 		iters ++;
 	}
@@ -37,7 +37,7 @@ AutoPlay.tryBestBuy = function() {
 	index = 0;
 	
 	for(i = 0; i < upgradePP.length; i ++) {
-		if(upgradePP[i] < minUpgradePP && Game.UpgradesById[i].unlocked) {
+		if(upgradePP[i] < minUpgradePP) {
 			bestUpgradeIndex = index;
 			minUpgradePP = upgradePP[i];
 		}
