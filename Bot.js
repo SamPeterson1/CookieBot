@@ -17,39 +17,47 @@ AutoPlay.calculatePP = function() {
 	iters = 0;
 	
 	for(var i in CM.Cache.Upgrades) { 
-		if(i == "Ambidextrous") {
-			var cost = 0;
-			var ii;
-			for(ii = 0; ii < Game.UpgradesById.length; ii ++) {
-				if(Game.UpgradesById[ii].name == "Ambidextrous") {
-					cost = Game.UpgradesById[ii].basePrice;
-				}
-			}
-			var bonus = 2*autoclickCPS;
-			CM.Cache.Upgrades[i].pp = ((cost-Game.cookies, 0)/Game.cookiesPs) + cost/bonus; 
-			console.log(CM.Cache.Upgrades[i].pp + " YA EET " + bonus + " " + cost);
+		if(i == "Reinforced index finger") {
+			CM.Cache.upgrades[i].pp = AutoPlay.upgradePP(i, 2*autoclickCPS + Game.ObjectsById[0].amount * AutoPlay.getCursorCps());
+			console.log(CM.Cache.upgrades[i].pp + " Index finger PP");
 		}
+		
 		upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 		iters ++;
 	}
 }
 
-AutoPlay.updateCpC = function() {
-	var CpC = 1;
+AutoPlay.upgradePP = function(name, bonus) {
+	var cost = 0;
+	var ii;
+	for(ii = 0; ii < Game.UpgradesById.length; ii ++) {
+		if(Game.UpgradesById[ii].name == name) {
+			cost = Game.UpgradesById[ii].basePrice;
+		}
+	}
+	return ((cost-Game.cookies, 0)/Game.cookiesPs) + cost/bonus; 
+}
+
+AutoPlay.getCursorCps = function() {
+	var cps = 1;
 	
 			
-	if(Game.Has("Reinforced index finger")) CpC *= 2;
-	if(Game.Has("Carpal tunnel prevention cream")) CpC *= 2;
-	if(Game.Has("Ambidextrous")) CpC *= 2;
-	if(Game.Has("Thousand fingers")) CpC += 0.1 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
-	if(Game.Has("Million fingers")) CpC += 0.5 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
-	if(Game.Has("Billion fingers")) CpC += 5 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
-	if(Game.Has("Trillion fingers")) CpC += 50 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
-	if(Game.Has("Quadrillion fingers")) CpC += 500 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
-	if(Game.Has("Quintillion fingers")) CpC += 5000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
-	if(Game.Has("Sextillion fingers")) CpC += 50000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
-	if(Game.Has("Septillion fingers")) CpC += 500000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
-	if(Game.Has("Octillion fingers")) CpC += 5000000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+	if(Game.Has("Reinforced index finger")) cps *= 2;
+	if(Game.Has("Carpal tunnel prevention cream")) cps *= 2;
+	if(Game.Has("Ambidextrous")) cps *= 2;
+	if(Game.Has("Thousand fingers")) cps += 0.1 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+	if(Game.Has("Million fingers")) cps += 0.5 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+	if(Game.Has("Billion fingers")) cps += 5 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+	if(Game.Has("Trillion fingers")) cps += 50 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+	if(Game.Has("Quadrillion fingers")) cps += 500 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+	if(Game.Has("Quintillion fingers")) cps += 5000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+	if(Game.Has("Sextillion fingers")) cps += 50000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+	if(Game.Has("Septillion fingers")) cps += 500000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+	if(Game.Has("Octillion fingers")) cps += 5000000 * (Game.BuildingsOwned - Game.ObjectsById[0].amount);
+}
+			
+AutoPlay.updateCpC = function() {
+	var CpC = AutoPlay.getCursorCps();
 		
 	var cpsMult = 1;
 			
