@@ -6,7 +6,7 @@ AutoPlay.run = function() {
 }
 
 void AutoPlay.calculatePP() {
-	var building = Game.ObjectsById[AutoPlay.cursorCPS-1];
+	var building = Game.ObjectsById[AutoPlay.cursorCPS()-1];
 	building.buy();
 }
 
