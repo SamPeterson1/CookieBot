@@ -9,6 +9,10 @@ var autoclickCPS = 12;
 
 AutoPlay.calculatePP = function() {
 	
+	buildingPP = [];	
+	upgradePP = [];
+	upgradeNames = [];
+	
 	var iters = 0;
 	for(var i in CM.Cache.Objects) { 
 		buildingPP[iters] = CM.Cache.Objects[i].pp;
