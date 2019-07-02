@@ -32,7 +32,7 @@ AutoPlay.calculatePP = function() {
 		if(i == "Octillion fingers") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, (5000000*(Game.BuildingsOwned-Game.ObjectsById[0].amount))*(autoclickCPS+Game.ObjectsById[0].amount));
 		var ii;
 		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
-			if(Game.UpgradesInStore[ii].name == i && Game.UpgradesInStore[ii]) {
+			if(Game.UpgradesInStore[ii].name == i) {
 				upgradeNames[iters] = i;
 				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 				iters ++;
