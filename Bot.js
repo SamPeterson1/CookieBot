@@ -168,6 +168,11 @@ AutoPlay.tryBestBuy = function() {
 AutoPlay.click = function() {Game.ClickCookie();}
 
 AutoPlay.run = function() {
+	
+	if(Game.BuildingsOwned == 0 && Game.cookies >= 15) {
+		Game.ObjectsById[0].buy();
+	}
+	
 	AutoPlay.calculatePP();
 	AutoPlay.tryBestBuy();
 	AutoPlay.goldenCookies2();
