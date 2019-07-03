@@ -50,17 +50,19 @@ AutoPlay.calculatePP = function() {
 		if(i == "Plasmarble mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		
 		var ii;
-		var foo = "";
+		var foo = "foo";
 		var test = 100;
+		var yeet = "yeet";
+		var woof = foo.concat(test, yeet);
 		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
 			if(Game.UpgradesInStore[ii].name == i) {
 				upgradeNames[iters] = i;
 				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 				iters ++;
-				foo = foo + i + test + ": " + upgradePP[iters] + ", ";
+				
 			}
 		}
-		console.log(foo);
+		console.log(woof);
 	}
 }
 
