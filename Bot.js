@@ -51,12 +51,13 @@ AutoPlay.calculatePP = function() {
 		
 		var ii;
 		var foo = "";
+		var test = 100;
 		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
 			if(Game.UpgradesInStore[ii].name == i) {
 				upgradeNames[iters] = i;
 				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 				iters ++;
-				foo = foo + i + ": " + upgradePP[iters] + ", ";
+				foo = foo + i + test + ": " + upgradePP[iters] + ", ";
 			}
 		}
 		console.log(foo);
