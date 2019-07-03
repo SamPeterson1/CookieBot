@@ -49,20 +49,16 @@ AutoPlay.calculatePP = function() {
 		if(i == "Technobsidian mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		if(i == "Plasmarble mouse") upgradePP[iters] = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		
-		var ii;
-		var foo = "foo";
-		var test = 100;
-		var yeet = "yeet";
-		var woof = foo.concat(test, yeet);
+		var foo = " ";
 		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
 			if(Game.UpgradesInStore[ii].name == i) {
 				upgradeNames[iters] = i;
 				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 				iters ++;
-				
+				foo = foo.concat(i, ": ", upgradePP, ", ");
 			}
 		}
-		console.log(woof);
+		console.log(foo);
 	}
 }
 
