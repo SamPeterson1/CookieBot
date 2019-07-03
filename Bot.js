@@ -122,9 +122,6 @@ AutoPlay.goldenCookies2 = function() {
 	if(sh.length > 0) sh[0].pop();
 }
 		
-AutoPlay.harvestLumps = function() {
-	var age = Game.
-}
 
 AutoPlay.tryBestBuy = function() {
 	var minPP = buildingPP[0];
