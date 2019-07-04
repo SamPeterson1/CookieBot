@@ -121,6 +121,12 @@ AutoPlay.goldenCookies2 = function() {
 	
 	if(sh.length > 0) sh[0].pop();
 }
+
+AutoPlay.doLumps = function() {
+	var age = Date.now() - Game.lumpT;
+	
+	if(age > Game.lumpRipeAge) Game.harvestLumps(1, false);
+}
 		
 
 AutoPlay.tryBestBuy = function() {
