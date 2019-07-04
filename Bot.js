@@ -5,7 +5,7 @@ var upgradeNames = [];
 var clickyUpgrades
 var nBuildingTypes = 3;
 var cookiesPC;
-var autoclickCPS = 12;
+var autoclickCPS = 1000;
 
 AutoPlay.calculatePP = function() {
 	
