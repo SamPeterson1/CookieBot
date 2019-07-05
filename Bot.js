@@ -23,7 +23,7 @@ AutoPlay.calculatePP = function() {
 		iters ++;
 	}
 	
-	
+	iters = 0;
 	for(var i in CM.Cache.Upgrades) { 
 		if(i == "Reinforced index finger") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, autoclickCPS + Game.ObjectsById[0].amount);
 		if(i == "Carpal tunnel prevention cream") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 2*(autoclickCPS + Game.ObjectsById[0].amount));
