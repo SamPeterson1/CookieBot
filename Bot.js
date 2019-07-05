@@ -224,6 +224,20 @@ AutoPlay.run = function() {
 	//Game.ClickCookie();
 }
 
+AutoPlay.upgradeGains = function(name) {
+	var desc = Game.Upgrades[name].baseDesc;
+	//Identify type
+	
+	for(var i in Game.ObjectsById) {
+		var capPlural = desc[0].toUpperCase() + desc.substring(1);
+		if(desc.contains(capPlural)) {
+			if(desc == capPlural + " are twice as efficient") {
+				return getCps(i);
+			}
+		}
+	}
+}
+
 AutoPlay.totalCps = function(id) {
 	var base = Game.ObjectsById[id].cps(Game.ObjectsById[id]);
 	return base * cpsMult * Game.ObjectsById[id].amount;
