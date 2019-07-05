@@ -261,7 +261,7 @@ AutoPlay.upgradeGains = function(name) {
 		}
 	}
 	
-	if(desc.includes("The mouse and cursors are <b>twice</b> as efficient") {
+	if(desc.includes("The mouse and cursors are <b>twice</b> as efficient")) {
 		return AutoPlay.getCps(0) + AutoPlay.cookiesPC;
 	}
 	if(desc.includes("The mouse and cursors gain")) {
