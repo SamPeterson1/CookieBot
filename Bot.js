@@ -249,12 +249,14 @@ AutoPlay.run = function() {
 AutoPlay.getMult = function(name) {
 	var mult = 1;
 	for(var i in Game.Upgrades) {
+		/*
 		if(typeof(Game.Upgrades[i].tier == "String")) {
 			if(Game.Upgrades[i].tier.includes("synergy")) {
 				if(Game.Upgrades[i].buildingTie1.name == name) mult += 0.01;
 				if(Game.Upgrades[i].buildingTie2.name == name) mult += 0.05;
 			}
 		}
+		*/
 		if(Game.Upgrades[i].name.includes("Grandmas")) {
 			if(Game.Upgrades[i].buildingTie.name == name) mult += 0.01;
 		}
