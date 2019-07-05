@@ -227,10 +227,11 @@ AutoPlay.run = function() {
 
 AutoPlay.upgradeGains = function(name) {
 	var desc = Game.Upgrades[name].baseDesc;
+	var plural = Game.Upgrades[name].plural;
 	//Identify type
 	
 	for(var i in Game.ObjectsById) {
-		var capPlural = desc[0].toUpperCase() + desc.substring(1);
+		var capPlural = plural[0].toUpperCase() + plural.substring(1);
 		console.log(capPlural + " are <b>twice</b> as efficient");
 		if(desc.includes(capPlural)) {
 			if(desc.includes(capPlural + " are <b>twice</b> as efficient")) {
