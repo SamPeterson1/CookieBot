@@ -242,6 +242,7 @@ AutoPlay.run = function() {
 	AutoPlay.tryBestBuy();
 	AutoPlay.goldenCookies2();
 	AutoPlay.updateCpsMult();
+	AutoPlay.updateCpC();
 	//Game.ClickCookie();
 }
 
