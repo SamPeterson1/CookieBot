@@ -18,12 +18,11 @@ AutoPlay.calculatePP = function() {
 	upgradeNames = [];
 	
 	var iters = 0;
-	for(var i in Game.ObjectsById) { 
-		buildingPP[iters] = Math.max(Game.cookies - Game.ObjectsById[i].price)/Game.cookiesPs + Game.ObjectsById[i].price/AutoPlay.getCps(i);
-		iters ++;
+	var i;
+	for(i = 0; i < Game.ObjectsById.length; i ++) { 
+		buildingPP[i] = Math.max(Game.cookies - Game.ObjectsById[i].price, 0)/Game.cookiesPs + Game.ObjectsById[i].price/AutoPlay.getCps(i);
 	}
 	
-	iters = 0;
 	
 	for(var i in CM.Cache.Upgrades) { 
 		if(i == "Reinforced index finger") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, autoclickCPS + Game.ObjectsById[0].amount);
