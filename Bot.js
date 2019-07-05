@@ -262,7 +262,7 @@ AutoPlay.getMult = function(name) {
 		}
 	}
 	for(var i in Game.ObjectsById) {
-		if(Game.ObjectsById[i].name == name) mult += Game.ObjectsById[name].level/100;
+		if(Game.ObjectsById[i].name == name) mult += Game.ObjectsById[i].level/100;
 	}
 	
 	return mult;
