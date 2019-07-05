@@ -228,13 +228,20 @@ AutoPlay.run = function() {
 }
 
 AutoPlay.totalCps = function(id) {
-	var base = Game.ObjectsById[id].baseCps(Game.ObjectsById[id]);
+	var base = AutoPlay.baseCps(id);
 	return base * cpsMult * Game.ObjectsById[id].amount;
 }
 	
 AutoPlay.getCps = function(id) {
-	var base = Game.ObjectsById[id].baseCps(Game.ObjectsById[id]);
+	var base = AutoPlay.baseCps(id);
 	return base * cpsMult;
+}
+
+AutoPlay.baseCps = function(id) {
+	if(typeof(Game.ObjectsById[id].baseCps) == 'function') {
+		return Game.ObjectsById[id].baseCps(Game.ObjectsById[id]);
+	}
+	return Game.ObjectsById[id].baseCps;
 }
 
 AutoPlay.updateCpsMult = function() {
