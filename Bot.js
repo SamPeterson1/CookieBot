@@ -19,7 +19,7 @@ AutoPlay.calculatePP = function() {
 	
 	var iters = 0;
 	for(var i in Game.ObjectsById) { 
-		buildingPP[iters] = Math.max(Game.cookies - Game.ObjectsById[i].cost)/Game.cookiesPs + Game.ObjectsById[i].cost/AutoPlay.getCps(i);
+		buildingPP[iters] = Math.max(Game.cookies - Game.ObjectsById[i].price)/Game.cookiesPs + Game.ObjectsById[i].price/AutoPlay.getCps(i);
 		iters ++;
 	}
 	
