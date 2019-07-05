@@ -18,9 +18,9 @@ AutoPlay.calculatePP = function() {
 	upgradeNames = [];
 	
 	var iters = 0;
-	var i;
-	for(i = 0; i < Game.ObjectsById.length; i ++) { 
-		buildingPP[i] = Math.max(Game.cookies - Game.ObjectsById[i].price, 0)/Game.cookiesPs + Game.ObjectsById[i].price/AutoPlay.getCps(i);
+	for(var i in Game.ObjectsById) { 
+		buildingPP[iters] = Math.max(Game.cookies - Game.ObjectsById[i].price, 0)/Game.cookiesPs + Game.ObjectsById[i].price/AutoPlay.getCps(i);
+		iters ++;
 	}
 	
 	
