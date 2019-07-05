@@ -263,11 +263,11 @@ AutoPlay.upgradeGains = function(name) {
 	}
 	
 	if(desc.includes("The mouse and cursors are <b>twice</b> as efficient")) {
-		return AutoPlay.getCps(0) + AutoPlay.cookiesPC;
+		return AutoPlay.getCps(0) + (AutoPlay.cookiesPC*autoClickCPS);
 	}
 	if(desc.includes("The mouse and cursors gain")) {
 		var num = parseInt(desc.split("<b>")[1].split("</b>")[0], 10);
-		var nonCursor = Game.buildingsOwned - Game.ObjectsById[0].amount;
+		var nonCursor = Game.BuildingsOwned - Game.ObjectsById[0].amount;
 		return nonCursor * num;
 	}
 }
