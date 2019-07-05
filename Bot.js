@@ -226,12 +226,12 @@ AutoPlay.run = function() {
 	//Game.ClickCookie();
 }
 
-AutoPlay.totalCps = function(var id) {
+AutoPlay.totalCps = function(id) {
 	var base = Game.ObjectsById[id].baseCps(Game.ObjectsById[id]);
 	return base * cpsMult * Game.ObjectsById[id].amount;
 }
 	
-AutoPlay.getCps = function(var id) {
+AutoPlay.getCps = function(id) {
 	var base = Game.ObjectsById[id].baseCps(Game.ObjectsById[id]);
 	return base * cpsMult;
 }
