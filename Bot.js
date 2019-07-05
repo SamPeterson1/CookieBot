@@ -223,6 +223,7 @@ AutoPlay.run = function() {
 	AutoPlay.calculatePP();
 	AutoPlay.tryBestBuy();
 	AutoPlay.goldenCookies2();
+	AutoPlay.updateCpsMult();
 	//Game.ClickCookie();
 }
 
@@ -259,6 +260,7 @@ AutoPlay.updateCpsMult = function() {
 	}
 	
 	mult *= kittenMult;
+	cpsMult = mult;
 }
 	
 AutoPlay.autoClicker = setInterval(AutoPlay.click, (1000/autoclickCPS));
