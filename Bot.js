@@ -286,7 +286,7 @@ AutoPlay.upgradeGains = function(name) {
 		if(name.includes("grandmas")) {
 			var buildingId = Game.Upgrades[name].buildingTie.id;
 			var buildingName = Game.Upgrades[name].buildingTie.name;
-			var benefit = Math.floor(Game.ObjectsById[1]/(buildingId-1))*0.01;
+			var benefit = Math.floor(Game.ObjectsById[1].amount/(buildingId-1))*0.01;
 			console.log(benefit + " " + AutoPlay.getMult(buildingName));
 			return AutoPlay.getCps(1) + AutoPlay.getCps(buildingId)/AutoPlay.getMult(buildingName)*(AutoPlay.getMult(buildingName)+benefit);
 		}
