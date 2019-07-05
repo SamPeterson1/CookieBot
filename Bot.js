@@ -257,7 +257,7 @@ AutoPlay.getMult = function(name) {
 			}
 		}
 		*/
-		if(Game.Upgrades[i].name.includes("Grandmas")) {
+		if(Game.Upgrades[i].name.includes("Grandmas") && Game.Upgrades[i].bought) {
 			if(Game.Upgrades[i].buildingTie.name == name) mult += 0.01;
 		}
 	}
