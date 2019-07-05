@@ -231,9 +231,10 @@ AutoPlay.upgradeGains = function(name) {
 	
 	for(var i in Game.ObjectsById) {
 		var capPlural = desc[0].toUpperCase() + desc.substring(1);
+		console.log(capPlural + " are <b>twice</b> as efficient");
 		if(desc.includes(capPlural)) {
-			if(desc == capPlural + " are twice as efficient") {
-				return getCps(i);
+			if(desc.includes(capPlural + " are <b>twice</b> as efficient")) {
+				return AutoPlay.getCps(i);
 			}
 		}
 	}
