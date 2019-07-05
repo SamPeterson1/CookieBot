@@ -255,6 +255,7 @@ AutoPlay.updateCpsMult = function() {
 	
 	for(var i in kittenTypes) {
 		var fullName = "Kitten " + i;
+		console.log(fullName);
 		if(Game.Upgrades[fullName].bought) kittenMult *= (1+Game.milkProgress*kittenFactors[index]);
 		index ++;
 	}
