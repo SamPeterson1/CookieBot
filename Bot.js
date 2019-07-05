@@ -55,6 +55,7 @@ AutoPlay.calculatePP = function() {
 		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
 			if(Game.UpgradesInStore[ii].name == i) {
 				upgradeNames[iters] = i;
+				console.log("IM ALIVE");
 				upgradePP[iters] = CM.Cache.Upgrades[i].pp;
 				iters ++;
 			}
@@ -251,7 +252,6 @@ AutoPlay.updateCpsMult = function() {
 	
 	for(var i in kittenTypes) {
 		var fullName = "Kitten " + kittenTypes[i];
-		console.log(fullName);
 		if(Game.Upgrades[fullName].bought) kittenMult *= (1+Game.milkProgress*kittenFactors[index]);
 		index ++;
 	}
