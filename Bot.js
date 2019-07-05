@@ -253,9 +253,9 @@ AutoPlay.run = function() {
 
 AutoPlay.isSynergy = function(name) {
 	for(var i in synergies) {
-		if(synergies[i] == name) return false;
+		if(synergies[i] == name) return true;
 	}
-	return true;
+	return false;
 }
 
 AutoPlay.getMult = function(name) {
