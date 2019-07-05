@@ -261,7 +261,9 @@ AutoPlay.getMult = function(name) {
 			if(Game.Upgrades[i].buildingTie.name == name) mult += 0.01;
 		}
 	}
-	mult += Game.ObjectsById[name].level/100;
+	for(var i in Game.ObjectsById) {
+		if(Game.ObjectsById[i].name == name) mult += Game.ObjectsById[name].level/100;
+	}
 	
 	return mult;
 }
