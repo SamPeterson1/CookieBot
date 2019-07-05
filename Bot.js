@@ -96,7 +96,7 @@ AutoPlay.useLumps = function() {
 		
 		for(var building in Game.ObjectsById) {
 			if(r >= building.level + 1) {
-				var val = (building.level+1)/
+				var val = (building.level+1);
 			}
 		}
 	}
