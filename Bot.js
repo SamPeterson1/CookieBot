@@ -254,7 +254,7 @@ AutoPlay.getMult = function(name) {
 			if(Game.Upgrades[i].buildingTie2.name == name) mult += 0.05;
 		}
 		if(Game.Upgrades[i].name.includes("Grandmas")) {
-			if(Game.Upgrades[i].buildingTie1.name == name) mult += 0.01;
+			if(Game.Upgrades[i].buildingTie.name == name) mult += 0.01;
 		}
 	}
 	mult += Game.ObjectsById[name].level/100;
