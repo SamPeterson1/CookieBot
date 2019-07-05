@@ -2,7 +2,7 @@ var AutoPlay = {};
 var buildingPP = [];	
 var upgradePP = [];
 var upgradeNames = [];
-var clickyUpgrades
+var clickyUpgrades;
 var nBuildingTypes = 3;
 var cookiesPC;
 var autoclickCPS = 50;
