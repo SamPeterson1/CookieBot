@@ -262,11 +262,11 @@ AutoPlay.upgradeGains = function(name) {
 		}
 	}
 	
-	if(name == "Reinforced index finger") return 1 + autoClickCPS;
-	if(name == "Carpal tunnel prevention cream") return 2 + 2*autoClickCPS;
-	if(name == "Ambidextrous") return 4 + 4*autoClickCPS;
+	if(name == "Reinforced index finger") return 1 + autoclickCPS;
+	if(name == "Carpal tunnel prevention cream") return 2 + 2*autoclickCPS;
+	if(name == "Ambidextrous") return 4 + 4*autoclickCPS;
 	
-	if(name.includes("mouse")) return 0.01*autoClickCPS*Game.cookiesPs;
+	if(name.includes("mouse")) return 0.01*autoclickCPS*Game.cookiesPs;
 	
 	if(desc.includes("The mouse and cursors gain")) {
 		var str = desc.split("<b>+")[1].split("</b>")[0];
