@@ -262,9 +262,12 @@ AutoPlay.upgradeGains = function(name) {
 		}
 	}
 	
-	if(desc.includes("The mouse and cursors are <b>twice</b> as efficient")) {
-		return AutoPlay.getCps(0) + (AutoPlay.cookiesPC*autoClickCPS);
-	}
+	if(name == "Reinforced index finger") return 1 + autoClickCPS;
+	if(name == "Carpal tunnel prevention cream") return 2 + 2*autoClickCPS;
+	if(name == "Ambidextrous") return 4 + 4*autoClickCPS;
+	
+	if(name.includes("mouse")) return 0.01*autoClickCPS*Game.cookiesPs;
+	
 	if(desc.includes("The mouse and cursors gain")) {
 		var str = desc.split("<b>+")[1].split("</b>")[0];
 		var num
