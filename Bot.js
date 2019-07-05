@@ -6,6 +6,10 @@ var clickyUpgrades
 var nBuildingTypes = 3;
 var cookiesPC;
 var autoclickCPS = 50;
+var minigames = {2,6,7};
+var cpsMult = 0;
+var kittenTypes = {"helpers", "workers", "engineers", "overseers", "managers", "accountants", "specialists", "experts", "consultants", "assistants to the regional manager", "marketeers", "analysts", "angels"};
+var kittenFactors = {0.1, 0.125, 0.15, 0.175, 0.2, 0.2, 0.2, 0.2, 0.2, 0.175, 0.15, 0.1};
 
 AutoPlay.calculatePP = function() {
 	
@@ -71,6 +75,31 @@ AutoPlay.UpgradePP = function(name, bonus) {
 		}
 	}
 	return ((cost-Game.cookies, 0)/Game.cookiesPs) + cost/bonus; 
+}
+
+AutoPlay.useLumps = function() {
+	
+	for(var id in minigames) {
+		if(Game.ObjectsById[id].level == 0 && Game.lumps > 0) {
+			Game.ObjectsById[id].levelUp();
+			break;
+		}
+	}
+	
+	if(Game.ObjectsById[2].level < 7 && Game.lumps > Game.ObjectsById[2].level) {
+		Game.ObjectsById[2].levelUp();
+	}
+	
+	if(Game.lumps > 100) {
+		var r = Game.lumps - 100;
+		var pp = [];
+		
+		for(var building in Game.ObjectsById) {
+			if(r >= building.level + 1) {
+				var val = (building.level+1)/
+			}
+		}
+	}
 }
 
 AutoPlay.getCursorCps = function() {
@@ -197,5 +226,40 @@ AutoPlay.run = function() {
 	//Game.ClickCookie();
 }
 
+AutoPlay.totalCps = function(var id) {
+	var base = Game.ObjectsById[id].baseCps(Game.ObjectsById[id]);
+	return base * cpsMult * Game.ObjectsById[id].amount;
+}
+	
+AutoPlay.getCps = function(var id) {
+	var base = Game.ObjectsById[id].baseCps(Game.ObjectsById[id]);
+	return base * cpsMult;
+}
+
+AutoPlay.updateCpsMult = function() {
+	
+	var mult = 1;
+	
+	//Add cookie multipliers
+	
+	for(var i in Game.cookieUpgrades) {
+		var me = Game.cookieUpgrades[i];
+		if(Game.Upgrades[me.name].bought) mult *= (1+(Game.Upgrades[me.name].power*0.01));
+	}
+	
+	//Add kitten multipliers
+	
+	var kittenMult = 1;
+	var index = 0;
+	
+	for(var i in kittenTypes) {
+		var fullName = "Kitten " + i;
+		if(Game.Upgrades[i].bought) kittenMult *= (1+Game.milkProgress*kittenFactors[index]);
+		index ++;
+	}
+	
+	mult *= kittenMult;
+}
+	
 AutoPlay.autoClicker = setInterval(AutoPlay.click, (1000/autoclickCPS));
 AutoPlay.autoPlayer = setInterval(AutoPlay.run, 300);
