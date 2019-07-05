@@ -258,6 +258,7 @@ AutoPlay.updateCpsMult = function() {
 	
 	mult *= kittenMult;
 	cpsMult = mult;
+	console.log("Mult: " + cpsMult);
 }
 	
 AutoPlay.autoClicker = setInterval(AutoPlay.click, (1000/autoclickCPS));
