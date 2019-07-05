@@ -266,7 +266,7 @@ AutoPlay.upgradeGains = function(name) {
 		return AutoPlay.getCps(0) + (AutoPlay.cookiesPC*autoClickCPS);
 	}
 	if(desc.includes("The mouse and cursors gain")) {
-		var str = desc.split("<b>")[1].split("</b>")[0];
+		var str = desc.split("<b>+")[1].split("</b>")[0];
 		var num
 		if(!(str == "0.1" || str == "0.5")) {
 			num = parseInt(str, 10);
