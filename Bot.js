@@ -10,6 +10,7 @@ var minigames = [2,6,7];
 var cpsMult = 0;
 var kittenTypes = ["helpers", "workers", "engineers", "overseers", "managers", "accountants", "specialists", "experts", "consultants", "assistants to the regional manager", "marketeers", "analysts", "angels"];
 var kittenFactors = [0.1, 0.125, 0.15, 0.175, 0.2, 0.2, 0.2, 0.2, 0.2, 0.175, 0.15, 0.1];
+var buildingMults = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 
 AutoPlay.calculatePP = function() {
 	
@@ -246,6 +247,22 @@ AutoPlay.run = function() {
 	//Game.ClickCookie();
 }
 
+AutoPlay.getMult = function(name) {
+	var mult = 1;
+	for(var i in Game.Upgrades) {
+		if(Game.Upgrades[i].tier.includes("synergy")) {
+			if(Game.Upgrades[i].buildingTie1.name == name) mult += 0.01;
+			if(Game.Upgrades[i].buildingTie2.name == name) mult += 0.05;
+		}
+		if(Game.Upgrades[i].name.includes("Grandmas")) {
+			if(Game.Upgrades[i].buildingTie1.name == name) mult += 0.01;
+		}
+	}
+	mult += Game.ObjectsById[name].level/100;
+	
+	return mult;
+}
+
 AutoPlay.upgradeGains = function(name) {
 	var desc = Game.Upgrades[name].baseDesc;
 	
@@ -259,6 +276,13 @@ AutoPlay.upgradeGains = function(name) {
 			if(desc.includes(capPlural + " are <b>twice</b> as efficient")) {
 				return AutoPlay.getCps(i);
 			}
+		}
+		
+		if(name.includes("grandmas")) {
+			var buildingId = Game.Upgrades[name].buildingTie1.id;
+			var buildingName = Game.Upgrades[name].buildingTie1.name;
+			var benefit = Math.floor(Game.ObjectsById[1]/(buildingId-1))*0.01;
+			return AutoPlay.getCps(1) + AutoPlay.getCps(buildingId)/AutoPlay.getMult(buildingName)*(AutoPlay.getMult(buildingName)+benefit);
 		}
 	}
 	
