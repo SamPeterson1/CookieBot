@@ -12,7 +12,7 @@ var kittenTypes = ["helpers", "workers", "engineers", "overseers", "managers", "
 var kittenFactors = [0.1, 0.125, 0.15, 0.175, 0.2, 0.2, 0.2, 0.2, 0.2, 0.175, 0.15, 0.1];
 var synergies = ["Future almanacs", "Rain prayer", "Seismic magic", "Asteroid mining", "Quantum electronics", "Temporal overclocking", "Contracts from beyond", "Printing presses",
 		"Paganism", "God particle", "Arcane knowledge", "Magical botany", "Fossil fuels", "Shipyards", "Primordial ores", "Gold fund", "Infernal crops", "Abysmal glitter", 
-		"Relativistic parsec-skipping", "Primeval glow", "Extra physics funding", "Chemical proficiency", "Light magic", "Mystical energies", "Gemmed talismans", "Charm quarks", "Recursive mirrors", "Mice clicking mice"];"
+		"Relativistic parsec-skipping", "Primeval glow", "Extra physics funding", "Chemical proficiency", "Light magic", "Mystical energies", "Gemmed talismans", "Charm quarks", "Recursive mirrors", "Mice clicking mice"];
 
 AutoPlay.calculatePP = function() {
 	
@@ -262,11 +262,9 @@ AutoPlay.getMult = function(name) {
 	var mult = 1;
 	for(var i in Game.Upgrades) {
 		
-		if(Game.Upgrades[i].tier != 0) {
-			if(Game.Upgrades[i].tier.includes("synergy")) {
-				if(Game.Upgrades[i].buildingTie1.name == name) mult += 0.01;
-				if(Game.Upgrades[i].buildingTie2.name == name) mult += 0.05;
-			}
+		if(AutoPlay.isSynergy(Game.Upgrades[i].name)) {
+			if(Game.Upgrades[i].buildingTie1.name == name) mult += 0.01;
+			if(Game.Upgrades[i].buildingTie2.name == name) mult += 0.05;
 		}
 		
 		if(Game.Upgrades[i].name.includes("Grandmas") && Game.Upgrades[i].bought) {
