@@ -119,6 +119,26 @@ AutoPlay.getCursorCps = function() {
 	
 	return cps;
 }
+
+AutoPlay.CpC = function() {
+	var CpC = AutoPlay.getCursorCps();
+	var mult = 0;
+	
+	if(Game.Has("Plastic mouse")) mult += 0.01;
+	if(Game.Has("Iron mouse")) mult += 0.01;
+	if(Game.Has("Titanium mouse")) mult += 0.01;
+	if(Game.Has("Adamantium mouse")) mult += 0.01;
+	if(Game.Has("Unobtainium mouse")) mult += 0.01;
+	if(Game.Has("Eludium mouse")) mult += 0.01;
+	if(Game.Has("Wishalloy mouse")) mult += 0.01;
+	if(Game.Has("Fantasteel mouse")) mult += 0.01;
+	if(Game.Has("Nevercrack mouse")) mult += 0.01;
+	if(Game.Has("Armythril mouse")) mult += 0.01;
+	if(Game.Has("Technobsidian mouse")) mult += 0.01;
+	if(Game.Has("Plasmarble mouse")) mult += 0.01;
+	
+	return CpC*mult;
+}
 			
 AutoPlay.updateCpC = function() {
 	var CpC = AutoPlay.getCursorCps();
@@ -239,6 +259,10 @@ AutoPlay.upgradeGains = function(name) {
 				return AutoPlay.getCps(i);
 			}
 		}
+	}
+	
+	if(desc.includes("The mouse and cursors are <b>twice</b> as efficient") {
+		return AutoPlay.getCps(0) + AutoPlay.
 	}
 }
 
