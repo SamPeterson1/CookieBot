@@ -10,7 +10,6 @@ var minigames = [2,6,7];
 var cpsMult = 0;
 var kittenTypes = ["helpers", "workers", "engineers", "overseers", "managers", "accountants", "specialists", "experts", "consultants", "assistants to the regional manager", "marketeers", "analysts", "angels"];
 var kittenFactors = [0.1, 0.125, 0.15, 0.175, 0.2, 0.2, 0.2, 0.2, 0.2, 0.175, 0.15, 0.1];
-var buildingMults = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 
 AutoPlay.calculatePP = function() {
 	
