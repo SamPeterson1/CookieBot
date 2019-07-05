@@ -10,6 +10,9 @@ var minigames = [2,6,7];
 var cpsMult = 0;
 var kittenTypes = ["helpers", "workers", "engineers", "overseers", "managers", "accountants", "specialists", "experts", "consultants", "assistants to the regional manager", "marketeers", "analysts", "angels"];
 var kittenFactors = [0.1, 0.125, 0.15, 0.175, 0.2, 0.2, 0.2, 0.2, 0.2, 0.175, 0.15, 0.1];
+var synergies = ["Future almanacs", "Rain prayer", "Seismic magic", "Asteroid mining", "Quantum electronics", "Temporal overclocking", "Contracts from beyond", "Printing presses",
+		"Paganism", "God particle", "Arcane knowledge", "Magical botany", "Fossil fuels", "Shipyards", "Primordial ores", "Gold fund", "Infernal crops", "Abysmal glitter", 
+		"Relativistic parsec-skipping", "Primeval glow", "Extra physics funding", "Chemical proficiency", "Light magic", "Mystical energies", "Gemmed talismans", "Charm quarks", "Recursive mirrors", "Mice clicking mice"];"
 
 AutoPlay.calculatePP = function() {
 	
@@ -244,6 +247,15 @@ AutoPlay.run = function() {
 	AutoPlay.updateCpsMult();
 	AutoPlay.updateCpC();
 	//Game.ClickCookie();
+}
+
+
+
+AutoPlay.isSynergy = function(name) {
+	for(var i in synergies) {
+		if(synergies[i] == name) return false;
+	}
+	return true;
 }
 
 AutoPlay.getMult = function(name) {
