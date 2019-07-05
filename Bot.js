@@ -50,8 +50,7 @@ AutoPlay.calculatePP = function() {
 		if(i == "Armythril mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		if(i == "Technobsidian mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
 		if(i == "Plasmarble mouse") CM.Cache.Upgrades[i].pp = AutoPlay.UpgradePP(i, 0.01*Game.cookiesPs*autoclickCPS);
-		
-		iters = 0;
+
 		for(ii = 0; ii < Game.UpgradesInStore.length; ii ++) {
 			if(Game.UpgradesInStore[ii].name == i) {
 				upgradeNames[iters] = i;
