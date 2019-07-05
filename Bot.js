@@ -18,8 +18,8 @@ AutoPlay.calculatePP = function() {
 	upgradeNames = [];
 	
 	var iters = 0;
-	for(var i in CM.Cache.Objects) { 
-		buildingPP[iters] = CM.Cache.Objects[i].pp;
+	for(var i in Game.ObjectsById) { 
+		buildingPP[iters] = Math.max(Game.cookies - Game.ObjectsById[i].cost)/Game.cookiesPs + Game.ObjectsById[i].cost/AutoPlay.getCps(i);
 		iters ++;
 	}
 	
@@ -80,8 +80,8 @@ AutoPlay.UpgradePP = function(name, bonus) {
 AutoPlay.useLumps = function() {
 	
 	for(var id in minigames) {
-		if(Game.ObjectsById[id].level == 0 && Game.lumps > 0) {
-			Game.ObjectsById[id].levelUp();
+		if(Game.ObjectsById[minigames[id]].level == 0 && Game.lumps > 0) {
+			Game.ObjectsById[minigames[id]].levelUp();
 			break;
 		}
 	}
