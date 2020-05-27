@@ -5,7 +5,7 @@ var upgradeNames = [];
 var clickyUpgrades;
 var nBuildingTypes = 3;
 var cookiesPC;
-var autoclickCPS = 50;
+var autoclickCPS = 6;
 var minigames = [2,6,7];
 var cpsMult = 0;
 var kittenTypes = ["helpers", "workers", "engineers", "overseers", "managers", "accountants", "specialists", "experts", "consultants", "assistants to the regional manager", "marketeers", "analysts", "angels"];
